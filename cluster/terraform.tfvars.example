@@ -1,0 +1,8 @@
+cluster_name = "forge"
+node_image   = "kindest/node:v1.34.0"
+workers      = 2
+
+# Change these if ports 80/443 are already in use on your machine,
+# e.g. 8080/8443 -> then open https://argocd.127.0.0.1.nip.io:8443
+http_host_port  = 80
+https_host_port = 443
