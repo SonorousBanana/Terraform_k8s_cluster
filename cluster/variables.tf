@@ -11,26 +11,26 @@ variable "node_image" {
 }
 
 variable "workers" {
-    description = "Number of worker nodes."
-    type = number
-    default = 2
+  description = "Number of worker nodes."
+  type        = number
+  default     = 2
 
-    validation {
-        condition = var.workers >= 0 && var.workers <= 5
-        error_message = "workers must be between 0 and 5."
-    }
+  validation {
+    condition     = var.workers >= 0 && var.workers <= 5
+    error_message = "workers must be between 0 and 5."
+  }
 }
 
 variable "http_host_port" {
-    description = "Port on your machine that forwards to the Gateway HTTP listener."
-    type        = number
-    default     = 80
+  description = "Port on your machine that forwards to the Gateway HTTP listener."
+  type        = number
+  default     = 80
 }
 
 variable "https_host_port" {
-    description = "Port on your machine that forwards to the Gateway HTTPS listener."
-    type        = number
-    default     = 443
+  description = "Port on your machine that forwards to the Gateway HTTPS listener."
+  type        = number
+  default     = 443
 }
 
 variable "gateway_http_node_port" {

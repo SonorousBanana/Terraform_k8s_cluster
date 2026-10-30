@@ -20,15 +20,15 @@ resource "kind_cluster" "this" {
       ]
 
       extra_port_mappings {
-        container_port  = var.gateway_http_node_port
-        host_port       = var.http_host_port
-        protocol        = "TCP"
+        container_port = var.gateway_http_node_port
+        host_port      = var.http_host_port
+        protocol       = "TCP"
       }
 
       extra_port_mappings {
-        container_port  = var.gateway_https_node_port
-        host_port       = var.https_host_port
-        protocol        = "TCP"
+        container_port = var.gateway_https_node_port
+        host_port      = var.https_host_port
+        protocol       = "TCP"
       }
     }
 
@@ -42,7 +42,7 @@ resource "kind_cluster" "this" {
 }
 
 resource "local_sensitive_file" "kubeconfig" {
-  content           = kind_cluster.this.kubeconfig
-  filename          = "${path.module}/kubeconfig"
-  file_permission   = "0600"
+  content         = kind_cluster.this.kubeconfig
+  filename        = "${path.module}/kubeconfig"
+  file_permission = "0600"
 }

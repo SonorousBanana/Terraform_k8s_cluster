@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        stack: [clusters/kind]
+        stack: [cluster]
     steps:
       - uses: actions/checkout@v5
       - uses: hashicorp/setup-terraform@v3
@@ -30,7 +30,7 @@ jobs:
           terraform_wrapper: false
 
       - name: 1. Cluster
-        working-directory: clusters/kind
+        working-directory: cluster
         run: |
           terraform init -input=false
           terraform apply -auto-approve -input=false
